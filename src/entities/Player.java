@@ -21,5 +21,6 @@ public class Player implements Character,Playable,Dynamic {
     @Override
     public void update() {
         this.move();
+        System.out.println(this.entity.getPosition());
     }
 }
