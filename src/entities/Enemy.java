@@ -37,6 +37,8 @@ public class Enemy implements Character,NonPlayable,Dynamic{
 
     @Override
     public void update() {
+
         this.move();
+        System.out.println(this.entity.getPosition());
     }
 }
