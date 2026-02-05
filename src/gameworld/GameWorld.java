@@ -6,11 +6,11 @@ import entities.Player;
 import vector.Position;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import entities.Character;
+import java.util.Scanner;
 
 public class GameWorld {
+    Scanner scanner = new Scanner(System.in);
     private final List<Character> characters = new ArrayList<>(
             List.of(
                     new Player(new Entity("link",100,new Position(),true)),
@@ -20,11 +20,13 @@ public class GameWorld {
 
 
     public void tick(){
+
         for(var entity : characters){
             entity.update();
+            }
         }
     }
 
 
 
-}
+

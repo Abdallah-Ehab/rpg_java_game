@@ -1,26 +1,16 @@
 package entities;
 
+import states.IdleState;
+import states.State;
 import vector.Position;
 
-public class Player implements Character,Playable,Dynamic {
-    private final Entity entity;
-    public Player(Entity entity) {
-        this.entity = entity;
-    }
-    @Override
-    public void move(){
-        Position position = entity.getPosition();
-        this.entity.setPosition(new Position(position.getX() + 10, position.getY() + 10));
-    }
+public class Player implements Playable{
+    private final Actor actor;
 
-    @Override
-    public String speak() {
-        return "Hi my name is " + this.entity.getName();
+    public Player(Actor actor) {
+        this.actor = actor;
     }
-
-    @Override
-    public void update() {
-        this.move();
-        System.out.println(this.entity.getPosition());
+    void update(){
+        this.actor.update();
     }
 }
