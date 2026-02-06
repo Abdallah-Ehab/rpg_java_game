@@ -1,7 +1,7 @@
 package capabilities;
 
-import entities.Entity;
+import entities.Actor;
 
 public interface Speakable {
-    void speak(Entity entity);
+    void speak(Actor actor);
 }

@@ -6,6 +6,6 @@ public class IdleState implements State {
 
     @Override
     public void update(Actor actor){
-        actor.getSpeakable().speak("I am idle.");
+        actor.speak();
     }
 }

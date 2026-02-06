@@ -1,8 +1,11 @@
 package entities;
 
 import capabilities.Attackable;
+import capabilities.Movable;
+import capabilities.Speakable;
 import states.IdleState;
 import states.State;
+import vector.Position;
 
 public class Actor{
     private final Entity entity;
@@ -10,6 +13,7 @@ public class Actor{
     private Movable movable;
     private Attackable attackable;
     private State state;
+    private Position Direction;
 
     public Actor(Entity entity, Speakable speakable,Movable movable, Attackable attackable) {
         this.entity = entity;
@@ -20,6 +24,14 @@ public class Actor{
     }
     public Entity getEntity(){
         return this.entity;
+    }
+
+    public Position getDirection() {
+        return Direction;
+    }
+
+    public void setDirection(Position direction) {
+        Direction = direction;
     }
 
     public Speakable getSpeakable() {
@@ -53,7 +65,23 @@ public class Actor{
     public void setState(State newState){
 
         this.state = newState;
+    }
 
+
+    public void speak(){
+        if(speakable != null){
+            speakable.speak(this);
+        }
+    }
+    public void attack(){
+        if(attackable != null){
+            attackable.attack(this);
+        }
+    }
+    public void move(){
+        if(movable != null){
+        movable.move(this);
+        }
     }
     public void update(){
         this.state.update(this);

@@ -1,7 +1,8 @@
 package capabilities;
 
-import entities.Entity;
+import entities.Actor;
+
 
 public interface Attackable {
-    void attack(Entity entity);
+    void attack(Actor actor);
 }
