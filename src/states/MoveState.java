@@ -1,10 +1,11 @@
 package states;
 
 import entities.Actor;
-import entities.Entity;
 
-public class AttackState {
+public class MoveState implements State{
+    @Override
     public void update(Actor actor){
-        actor.attack();
+        actor.move();
+
     }
 }

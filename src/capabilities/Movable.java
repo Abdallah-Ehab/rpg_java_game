@@ -1,7 +1,14 @@
 package capabilities;
 
-import entities.Entity;
+import entities.Actor;
+import vector.Position;
 
 public interface Movable {
-    void move(Entity entity);
+    float getSpeed();
+    default void move(Actor actor){
+        Position currentPosition = actor.getEntity().getPosition();
+        float x = actor.getDirection().getX()*getSpeed();
+        float y = actor.getDirection().getY()*getSpeed();
+        actor.getEntity().setPosition(currentPosition.add(new Position(x,y)));
+    }
 }

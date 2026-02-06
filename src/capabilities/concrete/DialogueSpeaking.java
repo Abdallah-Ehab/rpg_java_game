@@ -1,12 +1,13 @@
 package capabilities.concrete;
 
-import entities.Entity;
-import entities.Speakable;
+import capabilities.Speakable;
+import entities.Actor;
 
 public class DialogueSpeaking implements Speakable {
 
     @Override
-    public void speak(Entity entity) {
-        System.out.println(entity.getName() + " says: Hello, how are you?");
+    public void speak(Actor actor) {
+        System.out.println(actor.getEntity().getName() + " says: Hello, how are you?");
+
     }
 }
